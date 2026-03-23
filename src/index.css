@@ -1,0 +1,38 @@
+/* ══════════════════════════════════════════════
+   KOCHI KOCHU — Global Styles v3
+   Font file location: /public/fonts/
+══════════════════════════════════════════════ */
+
+@font-face {
+  font-family: 'Futura Std';
+  src: url('/fonts/1774258681387_Futura_Std_Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Futura Std';
+  src: url('/fonts/1774258681387_Futura_Std_Book.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  --off-white: #FFFDF3;
+  --dark:      #171717;
+  --red:       #8D2222;
+  --gutter:    117px;   /* universal spacing unit from annotation PDF */
+  --font:      'Futura Std', 'Futura', 'Century Gothic', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+body { background: var(--off-white); font-family: var(--font); overflow-x: hidden; }
+img  { display: block; max-width: 100%; }
+a    { text-decoration: none; color: inherit; }
+
+/* Mobile: collapse image grid to single column */
+@media (max-width: 768px) {
+  :root { --gutter: 32px; }
+}

@@ -1,0 +1,366 @@
+/* ══════════════════════════════════════════════════════
+   KOCHI KOCHU — Production CSS
+   Futura Std Book (.otf) embedded via @font-face
+   All values taken directly from the design specification
+══════════════════════════════════════════════════════ */
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+body { background: #FFFDF3; font-family: 'Futura Std', 'Futura', 'Century Gothic', sans-serif; overflow-x: hidden; }
+img  { display: block; max-width: 100%; }
+
+/* ══════════════════════════════════════════════════════
+   PAGE WRAPPER
+══════════════════════════════════════════════════════ */
+.page-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #FFFDF3;
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTION 1 — HERO
+   Height: 1024px | BG: #171717 | Position: relative
+══════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 1024px;
+  background-color: #171717;
+  overflow: hidden;
+}
+
+/* Full-bleed hero background image */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Subtle overlay to keep text legible */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 23, 23, 0.30);
+}
+
+/* LOGO — absolute, horizontally centered, top: 55px */
+.hero__logo {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 211px;
+  height: auto;
+  z-index: 10;
+  /* Text fallback when PNG is not provided */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo text fallback (renders when no PNG is loaded) */
+.hero__logo-text {
+  font-family: 'Futura Std', 'Futura', 'Century Gothic', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  color: #FFFDF3;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+/* TAGLINE — absolute, horizontally centered, bottom: 45px */
+.hero__tagline {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 252px;
+  width: 100%;
+  z-index: 10;
+
+  font-family: 'Futura Std', 'Futura', 'Century Gothic', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 131.8%;
+  letter-spacing: 0%;
+  color: #FFFDF3;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTION 2 — EDITORIAL CONTENT
+   BG: #FFFDF3 | Centered block
+══════════════════════════════════════════════════════ */
+.editorial {
+  background: #FFFDF3;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Text block container: max-width 450px, centered */
+.editorial__text-block {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* HEADING */
+.editorial__heading {
+  font-family: 'Futura Std', 'Futura', 'Century Gothic', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 131.8%;
+  color: #8D2222;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* PARAGRAPH GROUP */
+.editorial__paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Each individual paragraph */
+.editorial__p {
+  font-family: 'Futura Std', 'Futura', 'Century Gothic', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 131.8%;
+  color: #8D2222;
+  text-align: left;
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTION 3 — IMAGE GRID
+   Max-width: 1200px | 2 columns | Gap: ~117px
+   Images: ~545px × ~745px each
+══════════════════════════════════════════════════════ */
+.image-grid {
+  background: #FFFDF3;
+  padding: 60px 20px 100px;
+}
+
+/* Grid container */
+.image-grid__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 117px;
+}
+
+/* Individual image wrapper */
+.image-grid__item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-grid__img {
+  width: 100%;
+  height: 745px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTION 4 — CTA OVERLAY
+   Full-width image 1440×764 | Overlay content
+══════════════════════════════════════════════════════ */
+.cta {
+  position: relative;
+  width: 100%;
+  /* Maintain 1440:764 aspect ratio */
+  aspect-ratio: 1440 / 764;
+  overflow: hidden;
+}
+
+/* Background image — full width, covers container */
+.cta__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Gradient overlay — darkens bottom for readability */
+.cta__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(23, 23, 23, 0.85) 0%,
+    rgba(23, 23, 23, 0.45) 40%,
+    rgba(23, 23, 23, 0.05) 100%
+  );
+}
+
+/* LEFT CONTENT GROUP — bottom: 70px, left: 90px */
+.cta__left {
+  position: absolute;
+  bottom: 70px;
+  left: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.cta__heading {
+  font-family: 'Futura Std', 'Futura', 'Century Gothic', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 131.8%;
+  color: #FFFDF3;
+}
+
+.cta__paragraph {
+  font-family: 'Futura Std', 'Futura', 'Century Gothic', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 131.8%;
+  color: #FFFDF3;
+}
+
+.cta__btn {
+  display: inline-block;
+  margin-top: 8px;
+  align-self: center;
+  border: 1px solid #FFFDF3;
+  padding: 10px 28px;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Futura Std', 'Futura', 'Century Gothic', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFDF3;
+  letter-spacing: 0.04em;
+  transition: background 0.25s, color 0.25s;
+  text-decoration: none;
+}
+.cta__btn:hover {
+  background: #FFFDF3;
+  color: #171717;
+}
+
+/* RIGHT ICON GROUP — bottom: 70px, right: 90px */
+.cta__right {
+  position: absolute;
+  bottom: 70px;
+  right: 90px;
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  align-items: center;
+  z-index: 10;
+}
+
+.cta__icon {
+  width: 20px;
+  height: 20px;
+  color: #FFFDF3;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+.cta__icon:hover { opacity: 1; }
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤768px)
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Hero — mobile */
+  .hero {
+    height: 600px;
+  }
+
+  .hero__logo {
+    top: 70px;
+    left: 120px;
+    transform: none;
+    width: 187px;
+  }
+
+  .hero__tagline {
+    bottom: 28px;
+    max-width: 255px;
+    font-size: 14px;
+  }
+
+  /* Editorial — mobile */
+  .editorial {
+    padding: 80px 32px 80px;
+  }
+  .editorial__text-block {
+    max-width: 100%;
+  }
+  .editorial__heading {
+    font-size: 22px;
+    margin-bottom: 57px;
+  }
+  .editorial__p {
+    font-size: 14px;
+  }
+
+  /* Image grid — mobile: vertical stack */
+  .image-grid {
+    padding: 40px 32px 80px;
+  }
+  .image-grid__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .image-grid__img {
+    height: auto;
+    aspect-ratio: 4/5;
+  }
+
+  /* CTA — mobile */
+  .cta {
+    aspect-ratio: auto;
+    height: 826px;
+  }
+
+  .cta__left {
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 0 24px;
+  }
+  .cta__heading,
+  .cta__paragraph {
+    text-align: center;
+  }
+
+  .cta__right {
+    bottom: 32px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__logo {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
