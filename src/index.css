@@ -13,7 +13,7 @@
 @font-face {
   font-family: 'Futura Std';
   src: url('/fonts/1774258681387_Futura_Std_Book.otf') format('opentype');
-  font-weight: 700;
+  font-weight: 800;
   font-style: normal;
   font-display: block;
 }
@@ -38,4 +38,131 @@ a    { text-decoration: none; color: inherit; }
 /* Mobile: collapse image grid to single column */
 @media (max-width: 768px) {
   :root { --gutter: 32px; }
+}
+
+
+/* ===== Teaser Popup ===== */
+.teaser-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* NEW: beige transparent overlay */
+  background: rgba(255, 253, 243, 0.6);
+}
+
+/* POPUP BOX */
+.teaser-popup {
+  position: relative;
+  background: #FFFDF3;
+  color: #8D2222;
+
+  width: 90%;
+  max-width: 580px;
+
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* CLOSE */
+.teaser-popup__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #8D2222;
+  cursor: pointer;
+}
+
+/* HEADING */
+.teaser-popup__heading {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* TEXT */
+.teaser-popup__text {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.teaser-popup__form {
+  display: flex;
+  align-items: stretch;
+}
+
+/* INPUT */
+.teaser-popup__input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #8D2222;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  background: transparent;
+  color: #8D2222;
+  font-size: 0.85rem;
+}
+
+/* BUTTON */
+.teaser-popup__btn {
+  padding: 10px 20px;
+  border: 2px solid #8D2222;
+  background: transparent;
+  color: #8D2222;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* THANK YOU TEXT */
+.teaser-popup__success {
+  font-size: 11px;
+  margin-top: 12px;
+  color: #8D2222;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .teaser-popup {
+    width: 390px;
+    max-width: 90%;
+    height: 249px;
+
+    padding: 24px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .teaser-popup__heading {
+    font-size: 18px;
+  }
+
+  .teaser-popup__text {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .teaser-popup__form {
+    flex-direction: row;
+  }
+
+  .teaser-popup__input {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .teaser-popup__btn {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
 }

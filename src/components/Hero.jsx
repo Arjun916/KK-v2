@@ -9,18 +9,24 @@ export default function Hero() {
           background: #171717;
           overflow: hidden;
         }
-        .hero-bg {
+        .hero-video {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
           object-position: center top;
+          z-index: 0;
         }
+        /* Show desktop, hide mobile by default */
+        .hero-video-desktop { display: block; }
+        .hero-video-mobile  { display: none; }
+
         .hero-overlay {
           position: absolute;
           inset: 0;
           background: rgba(23,23,23,0.25);
+          z-index: 1;
         }
         .hero-logo {
           position: absolute;
@@ -48,13 +54,15 @@ export default function Hero() {
           margin: 0;
         }
 
-        /* ── MOBILE ── */
         @media (max-width: 768px) {
-          .hero { height: 600px; }
+          .hero { height: 932px; }
+          /* Swap videos on mobile */
+          .hero-video-desktop { display: none; }
+          .hero-video-mobile  { display: block; }
           .hero-logo {
             top: 70px;
-            left: 120px;
-            transform: none;
+            left: 50%;
+            transform: translateX(-50%);
             width: 187px;
           }
           .hero-tagline {
@@ -63,28 +71,32 @@ export default function Hero() {
             max-width: 255px;
           }
         }
-        @media (max-width: 480px) {
-          .hero-logo {
-            left: 50%;
-            transform: translateX(-50%);
-          }
-        }
       `}</style>
 
       <section className="hero" aria-label="Hero">
 
-        <picture>
-          <source media="(max-width: 768px)" srcSet="/hero-bg-mobile.jpg" />
-          <img className="hero-bg" src="/hero-bg.jpg" alt="" aria-hidden="true" />
-        </picture>
+        {/* DESKTOP VIDEO — hidden on mobile */}
+        <video
+          className="hero-video hero-video-desktop"
+          autoPlay loop muted playsInline
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+          <img src="/hero-bg.jpg" alt="" aria-hidden="true"
+            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} />
+        </video>
+
+        {/* MOBILE VIDEO — hidden on desktop */}
+        <video
+          className="hero-video hero-video-mobile"
+          autoPlay loop muted playsInline
+        >
+          <source src="/hero-bg-mobile.mp4" type="video/mp4" />
+          <img src="/hero-bg-mobile.jpg" alt="" aria-hidden="true"
+            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} />
+        </video>
 
         <div className="hero-overlay" aria-hidden="true" />
 
-        {/*
-          LOGO — replace this <img> src with your actual logo file.
-          File location: public/logo.png
-          Size: 211px wide on desktop, 187px on mobile
-        */}
         <img
           className="hero-logo"
           src="/logo.png"
