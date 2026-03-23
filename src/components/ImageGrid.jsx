@@ -1,66 +1,83 @@
 /**
- * ImageGrid.jsx
- *
- * Spec:
- *  - BG: #FFFDF3
- *  - Container: max-width 1200px, centered
- *  - Layout: CSS grid, 2 columns
- *  - Gap between images: ~117px
- *  - Images: width ~545px each, height ~745px, object-fit cover
- *  - Uses grid/flex — NO absolute positioning
- *
- * Desktop images: 545×745 portrait
- * Mobile (≤768px): single column, gap 32px, aspect-ratio 4/5
+ * ImageGrid.jsx — v3
+ * Uses CSS classes (not inline styles) for responsive grid
+ * so media queries work correctly on mobile
  */
 export default function ImageGrid() {
   return (
-    <section
-      style={{ background: '#FFFDF3', padding: '60px 20px 100px' }}
-      aria-label="Editorial image grid"
-    >
-      <div
-        style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '117px',   /* annotation PDF: left:117 | img | 117 gap | img | right:117 */
-        }}
-      >
+    <>
+      <style>{`
+        .grid-section {
+          background: #FFFDF3;
+          padding: 0 117px 117px;
+          width: 100%;
+        }
+        .grid-inner {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 117px;
+          max-width: 1206px;
+          margin: 0 auto;
+        }
+        .grid-figure {
+          margin: 0;
+          overflow: hidden;
+        }
+        .grid-img {
+          width: 100%;
+          height: 745px;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+        }
 
-        {/* IMAGE 1 — 545×745px portrait placeholder */}
-        <figure style={{ margin: 0, overflow: 'hidden' }}>
-          <img
-            src="https://via.placeholder.com/545x745/C8BFB2/8D2222?text=+"
-            alt="Kochi Kochu — editorial image one"
-            loading="eager"
-            style={{
-              width: '100%',
-              height: '745px',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              display: 'block',
-            }}
-          />
-        </figure>
+        /* ── MOBILE ── */
+        @media (max-width: 768px) {
+          .grid-section {
+            padding: 0 32px 80px;
+          }
+          .grid-inner {
+            grid-template-columns: 1fr;
+            gap: 32px;
+          }
+          .grid-img {
+            height: auto;
+            aspect-ratio: 4 / 5;
+          }
+        }
+      `}</style>
 
-        {/* IMAGE 2 — 545×745px portrait placeholder */}
-        <figure style={{ margin: 0, overflow: 'hidden' }}>
-          <img
-            src="https://via.placeholder.com/545x745/B8AFA8/8D2222?text=+"
-            alt="Kochi Kochu — editorial image two"
-            loading="lazy"
-            style={{
-              width: '100%',
-              height: '745px',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              display: 'block',
-            }}
-          />
-        </figure>
+      <section className="grid-section" aria-label="Editorial images">
+        <div className="grid-inner">
 
-      </div>
-    </section>
+          {/* IMAGE 1 */}
+          <figure className="grid-figure">
+            <picture>
+              <source media="(max-width: 768px)" srcSet="/image-grid-1-mobile.jpg" />
+              <img
+                className="grid-img"
+                src="/image-grid-1.jpg"
+                alt="Kochi Kochu — editorial image one"
+                loading="eager"
+              />
+            </picture>
+          </figure>
+
+          {/* IMAGE 2 */}
+          <figure className="grid-figure">
+            <picture>
+              <source media="(max-width: 768px)" srcSet="/image-grid-2-mobile.jpg" />
+              <img
+                className="grid-img"
+                src="/image-grid-2.jpg"
+                alt="Kochi Kochu — editorial image two"
+                loading="lazy"
+              />
+            </picture>
+          </figure>
+
+        </div>
+      </section>
+    </>
   )
 }

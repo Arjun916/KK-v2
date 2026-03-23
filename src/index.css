@@ -28,7 +28,10 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
-body { background: var(--off-white); font-family: var(--font); overflow-x: hidden; }
+body { background: var(--off-white); font-family: var(--font); overflow-x: hidden; background: #FFFDF3;
+  width: 100%;
+  margin: 0;
+  padding: 0;}
 img  { display: block; max-width: 100%; }
 a    { text-decoration: none; color: inherit; }
 

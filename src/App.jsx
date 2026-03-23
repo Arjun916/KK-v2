@@ -18,13 +18,7 @@ import CTASection     from './components/CTASection'
 
 export default function App() {
   return (
-    <div
-      style={{
-        maxWidth: '1440px',
-        margin: '0 auto',
-        background: '#FFFDF3',
-      }}
-    >
+    <div style={{ width: '100%', background: '#FFFDF3' }}>
       <Hero />
       <ContentSection />
       <ImageGrid />
