@@ -5,7 +5,7 @@ export default function Hero() {
         .hero {
           position: relative;
           width: 100%;
-          height: 1024px;
+          min-height: 100vh; /* ✅ full screen but flexible */
           background: #171717;
           overflow: hidden;
         }
@@ -55,7 +55,7 @@ export default function Hero() {
         }
 
         @media (max-width: 768px) {
-          .hero { height: 932px; }
+          .hero { min-height: 100vh; }
           /* Swap videos on mobile */
           .hero-video-desktop { display: none; }
           .hero-video-mobile  { display: block; }
