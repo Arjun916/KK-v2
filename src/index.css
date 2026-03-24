@@ -56,9 +56,8 @@ a    { text-decoration: none; color: inherit; }
   position: relative;
   background: #FFFDF3;
   color: #8D2222;
-  width: 469px;
-  max-width: calc(100vw - 48px);
-  min-height: 299px;
+  width: 90%;
+  max-width: 580px;
   padding: 60px 40px;
   text-align: center;
   border-radius: 8px;
@@ -135,9 +134,9 @@ a    { text-decoration: none; color: inherit; }
 
 @media (max-width: 480px) {
   .teaser-popup {
-    width: 390.57px;
+    width: 390px;
     max-width: 90%;
-    min-height: 249px;
+    height: 249px;
     padding: 24px 20px;
     display: flex;
     flex-direction: column;
