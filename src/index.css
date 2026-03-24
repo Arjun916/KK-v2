@@ -123,13 +123,23 @@ a    { text-decoration: none; color: inherit; }
   border-radius: 0 8px 8px 0;
   cursor: pointer;
   font-size: 0.85rem;
+
+  /* ✨ smooth premium feel */
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
 }
 
+/* 🔥 hover + focus */
 .teaser-popup__btn:hover,
 .teaser-popup__btn:focus-visible {
-  background: transparent;
-  color: #8D2222;
+  background: #8D2222;
+  color: #FFFDF3;
   border-color: #8D2222;
+  transform: translateY(-1px);
+}
+
+/* 👇 subtle press effect */
+.teaser-popup__btn:active {
+  transform: translateY(0);
 }
 
 .teaser-popup__success {
