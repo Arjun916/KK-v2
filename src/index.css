@@ -97,17 +97,20 @@ a    { text-decoration: none; color: inherit; }
 .teaser-popup__form {
   display: flex;
   align-items: stretch;
+  overflow: hidden;        /* 🔥 makes it one unit */
+  border-radius: 8px;      /* 🔥 matches Figma */
+  border: 2px solid #8D2222;
 }
 
 .teaser-popup__input {
   flex: 1;
-  padding: 10px 14px;
-  border: 2px solid #8D2222;
-  border-right: none;
-  border-radius: 8px 0 0 8px;
+  height: 40px;                 /* ✅ FIX alignment */
+  padding: 0 14px;              /* ✅ vertical padding removed */
+  border: none;
   background: transparent;
   color: #8D2222;
   font-size: 0.85rem;
+  outline: none;
 }
 
 .teaser-popup__input::placeholder {
@@ -116,29 +119,33 @@ a    { text-decoration: none; color: inherit; }
 }
 
 .teaser-popup__btn {
-  padding: 10px 20px;
-  border: 2px solid #8D2222;
+  height: 40px;                 /* ✅ SAME height as input */
+  padding: 0 20px;              /* ✅ remove vertical padding */
+  border: none;
   background: transparent;
   color: #8D2222;
-  border-radius: 0 8px 8px 0;
   cursor: pointer;
   font-size: 0.85rem;
 
-  /* ✨ smooth premium feel */
+  display: flex;                /* ✅ center text */
+  align-items: center;
+  justify-content: center;
+
   transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
 }
 
-/* 🔥 hover + focus */
+/* hover + focus */
 .teaser-popup__btn:hover,
 .teaser-popup__btn:focus-visible {
   background: #8D2222;
   color: #FFFDF3;
-  border-color: #8D2222;
   transform: translateY(-1px);
 }
 
-/* 👇 subtle press effect */
+/* active (press) */
 .teaser-popup__btn:active {
+  background: #8D2222;
+  color: #FFFDF3;
   transform: translateY(0);
 }
 
@@ -184,15 +191,17 @@ a    { text-decoration: none; color: inherit; }
     flex-direction: row;
   }
 
-  .teaser-popup__input {
-    font-size: 12px;
-    padding: 8px;
-  }
+.teaser-popup__input {
+  font-size: 12px;
+  height: 36px;
+  padding: 0 10px;
+}
 
-  .teaser-popup__btn {
-    font-size: 12px;
-    padding: 8px 14px;
-  }
+.teaser-popup__btn {
+  font-size: 12px;
+  height: 36px;
+  padding: 0 14px;
+}
 
   .teaser-popup__success {
     margin-top: 26px;
