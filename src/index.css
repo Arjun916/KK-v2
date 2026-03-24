@@ -122,6 +122,7 @@ a    { text-decoration: none; color: inherit; }
   height: 40px;                 /* ✅ SAME height as input */
   padding: 0 20px;              /* ✅ remove vertical padding */
   border: none;
+  border-left: 2px solid #8D2222;
   background: transparent;
   color: #8D2222;
   cursor: pointer;
@@ -131,7 +132,7 @@ a    { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: center;
 
-  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 /* hover + focus */
@@ -139,14 +140,17 @@ a    { text-decoration: none; color: inherit; }
 .teaser-popup__btn:focus-visible {
   background: #8D2222;
   color: #FFFDF3;
-  transform: translateY(-1px);
 }
-
+/* ✨ hide divider on hover (premium polish) */
+.teaser-popup__btn:hover {
+  border-left: 2px solid transparent;
+}
 /* active (press) */
 .teaser-popup__btn:active {
   background: #8D2222;
   color: #FFFDF3;
   transform: translateY(0);
+  border-left: 2px solid transparent;
 }
 
 .teaser-popup__success {
