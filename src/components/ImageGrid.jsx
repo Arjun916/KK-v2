@@ -42,7 +42,6 @@ export default function ImageGrid() {
           }
           .grid-img {
             height: auto;
-            aspect-ratio: 4 / 5;
           }
         }
       `}</style>
