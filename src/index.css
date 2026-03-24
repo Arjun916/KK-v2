@@ -152,6 +152,7 @@ a    { text-decoration: none; color: inherit; }
   font-size: 11px;
   margin-top: 26px;
   color: #8D2222;
+  font-weight: 400;
   line-height: 1.45;
   opacity: 0;
   transform: translateY(4px);
@@ -195,6 +196,13 @@ a    { text-decoration: none; color: inherit; }
   .teaser-popup__heading {
     font-size: 16px;
     font-weight: 700;
+  }
+
+  .teaser-popup__text,
+  .teaser-popup__input,
+  .teaser-popup__btn,
+  .teaser-popup__success {
+    font-weight: 400;
   }
 
   .teaser-popup__text {

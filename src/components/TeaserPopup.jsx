@@ -93,7 +93,7 @@ export default function TeaserPopup({ storageKey = "teaserPopupSeen" }) {
             required
           />
           <button type="submit" className="teaser-popup__btn" disabled={submitted}>
-            Join
+            Sign-up
           </button>
         </form>
 
