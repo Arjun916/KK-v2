@@ -86,7 +86,7 @@ export default function TeaserPopup({ storageKey = "teaserPopupSeen" }) {
           <input
             type="email"
             className="teaser-popup__input"
-            placeholder="Enter your email"
+            placeholder="Enter your email here"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={submitted}
@@ -99,7 +99,7 @@ export default function TeaserPopup({ storageKey = "teaserPopupSeen" }) {
 
         {submitted && (
           <p className="teaser-popup__success">
-            Thank you. You're in. We'll be in touch.
+            You're in. We'll be in touch.
           </p>
         )}
       </div>
