@@ -35,7 +35,7 @@ export default function TeaserPopup({ storageKey = "teaserPopupSeen" }) {
 
     const timeoutId = window.setTimeout(() => {
       handleClose();
-    }, 10000);
+    }, 5000);
 
     return () => window.clearTimeout(timeoutId);
   }, [submitted]);
@@ -74,7 +74,9 @@ export default function TeaserPopup({ storageKey = "teaserPopupSeen" }) {
           &times;
         </button>
 
-        <h2 className="teaser-popup__heading" id="teaser-popup-heading">
+        <h2 className="teaser-popup__heading" id="teaser-popup-heading" style="
+    font-weight: bolder;
+">
           Join Kochi Kochu
         </h2>
 
