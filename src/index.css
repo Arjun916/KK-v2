@@ -10,12 +10,19 @@
   font-style: normal;
   font-display: block;
 }
-@font-face {
+/* @font-face {
   font-family: 'Futura Std';
   src: url('/fonts/1774258681387_Futura_Std_Book.otf') format('opentype');
   font-weight: 800;
   font-style: normal;
   font-display: block;
+} */
+@font-face {
+  font-family: 'Futura Std';
+  src: url('/fonts/Futura_Std_Heavy.otf') format('opentype'); 
+  font-weight: 700; /* or 800 */
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -77,7 +84,7 @@ a    { text-decoration: none; color: inherit; }
 .teaser-popup__heading {
   color: #8D2222;
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
@@ -145,7 +152,7 @@ a    { text-decoration: none; color: inherit; }
 
   .teaser-popup__heading {
     font-size: 16px;
-    font-weight: 900;
+    font-weight: 700;
   }
 
   .teaser-popup__text,
