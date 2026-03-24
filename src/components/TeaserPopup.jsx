@@ -35,7 +35,7 @@ export default function TeaserPopup({ storageKey = "teaserPopupSeen" }) {
 
     const timeoutId = window.setTimeout(() => {
       handleClose();
-    }, 10000);
+    }, 3000);
 
     return () => window.clearTimeout(timeoutId);
   }, [submitted]);

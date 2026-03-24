@@ -77,7 +77,7 @@ a    { text-decoration: none; color: inherit; }
 .teaser-popup__heading {
   color: #8D2222;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 900;
   margin-bottom: 8px;
 }
 
@@ -145,7 +145,7 @@ a    { text-decoration: none; color: inherit; }
 
   .teaser-popup__heading {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 900;
   }
 
   .teaser-popup__text,
