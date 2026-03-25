@@ -151,11 +151,12 @@ export default function CTASection() {
 
           /* Content → TOP, centered */
           .cta-left {
-            top: 60px;
+            top: 32px;
             left: 50%;
             transform: translateX(-50%);
             align-items: center;
             width: 85%;
+            gap: 1px;
           }
           .cta-heading,
           .cta-p {
@@ -197,7 +198,7 @@ export default function CTASection() {
 
         {/* LEFT / TOP CONTENT BLOCK */}
         <div className="cta-left">
-          <p className="cta-heading">Be part of Kochi Kochu</p>
+          <p className="cta-heading" style="padding-bottom: 20px;" >Be part of Kochi Kochu</p>
           <p className="cta-p">Made with intention.</p>
           <p className="cta-p">Sign up for early access and updates.</p>
           <div className="cta-btn-wrap">
