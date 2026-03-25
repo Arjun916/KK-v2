@@ -77,6 +77,11 @@ export default function CTASection() {
           width: 100%;
           margin-top: 12px;
         }
+          @media (max-width: 768px) {
+          .cta-btn-wrap {
+              justify-content: center;
+            }
+          }
 
         /* ── BUTTON — FIXED 125×43px on ALL breakpoints ──
            No padding-based sizing. Width + height are the source of truth. */
