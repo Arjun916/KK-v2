@@ -3,109 +3,99 @@ export default function Hero() {
     <>
       <style>{`
         .hero {
-          position: relative;
           width: 100%;
-          min-height: 100vh; /* ✅ full screen but flexible */
-          background: #171717;
-          overflow: hidden;
+          min-height: 100vh;
+          background: #000;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center; /* 🔥 centers everything vertically */
+          gap: clamp(20px, 5vh, 60px); /* spacing between sections */
         }
+
+        /* 🔝 Top */
+        .hero-top {
+          display: flex;
+          justify-content: center;
+        }
+
+        .hero-logo {
+          width: clamp(140px, 18vw, 211px);
+        }
+
+        /* 🎥 Middle (video container) */
+        .hero-middle {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
         .hero-video {
-          position: absolute;
-          inset: 0;
           width: 100%;
-          height: 100%;
+          max-width: 900px;
+          height: auto;
           object-fit: cover;
-          object-position: center top;
-          z-index: 0;
         }
-        /* Show desktop, hide mobile by default */
+
+        /* swap videos */
         .hero-video-desktop { display: block; }
         .hero-video-mobile  { display: none; }
 
-        .hero-overlay {
-          position: absolute;
-          inset: 0;
-          background: rgba(23,23,23,0.25);
-          z-index: 1;
+        /* 🔽 Bottom */
+        .hero-bottom {
+          display: flex;
+          justify-content: center;
         }
-        .hero-logo {
-          position: absolute;
-          top: 55px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 211px;
-          height: auto;
-          z-index: 20;
-        }
+
         .hero-tagline {
-          position: absolute;
-          bottom: 45px;
-          left: 50%;
-          transform: translateX(-50%);
-          max-width: 252px;
-          width: 100%;
-          z-index: 20;
+          max-width: clamp(200px, 60vw, 260px);
           font-family: 'Futura Std', 'Futura', 'Century Gothic', sans-serif;
           font-weight: 400;
-          font-size: 18px;
-          line-height: 131.8%;
+          font-size: clamp(14px, 2vw, 18px);
+          line-height: 1.3;
           color: #FFFDF3;
           text-align: center;
           margin: 0;
         }
 
+        /* 📱 Mobile */
         @media (max-width: 768px) {
-          .hero { min-height: 100vh; }
-          /* Swap videos on mobile */
           .hero-video-desktop { display: none; }
           .hero-video-mobile  { display: block; }
-          .hero-logo {
-            top: 70px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 187px;
-          }
-          .hero-tagline {
-            font-size: 14px;
-            bottom: 54px;
-            max-width: 255px;
-          }
         }
       `}</style>
 
-      <section className="hero" aria-label="Hero">
+      <section className="hero">
 
-        {/* DESKTOP VIDEO — hidden on mobile */}
-        <video
-          className="hero-video hero-video-desktop"
-          autoPlay loop muted playsInline
-        >
-          <source src="/hero-bg.mp4" type="video/mp4" />
-          {/* <img src="/hero-bg.jpg" alt="" aria-hidden="true"
-            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} /> */}
-        </video>
+        {/* TOP */}
+        <div className="hero-top">
+          <img className="hero-logo" src="/logo.png" alt="Kochi Kochu" />
+        </div>
 
-        {/* MOBILE VIDEO — hidden on desktop */}
-        <video
-          className="hero-video hero-video-mobile"
-          autoPlay loop muted playsInline
-        >
-          <source src="/hero-bg-mobile.mp4" type="video/mp4" />
-          {/* <img src="/hero-bg-mobile.jpg" alt="" aria-hidden="true"
-            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} /> */}
-        </video>
+        {/* MIDDLE (VIDEO ✅) */}
+        <div className="hero-middle">
+          <video
+            className="hero-video hero-video-desktop"
+            autoPlay loop muted playsInline
+          >
+            <source src="/hero-bg.mp4" type="video/mp4" />
+          </video>
 
-        <div className="hero-overlay" aria-hidden="true" />
+          <video
+            className="hero-video hero-video-mobile"
+            autoPlay loop muted playsInline
+          >
+            <source src="/hero-bg-mobile.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-        <img
-          className="hero-logo"
-          src="/logo.png"
-          alt="Kochi Kochu"
-        />
-
-        <p className="hero-tagline">
-          Welcome to Kochi Kochu where belonging takes form
-        </p>
+        {/* BOTTOM */}
+        <div className="hero-bottom">
+          <p className="hero-tagline">
+            Welcome to Kochi Kochu where belonging takes form
+          </p>
+        </div>
 
       </section>
     </>
