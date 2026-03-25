@@ -67,7 +67,7 @@ export default function Hero() {
           }
           .hero-tagline {
             font-size: 14px;
-            bottom: 28px;
+            bottom: 54px;
             max-width: 255px;
           }
         }

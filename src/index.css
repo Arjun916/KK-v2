@@ -94,6 +94,12 @@ a    { text-decoration: none; color: inherit; }
   font-size: 14px;
   margin-bottom: 20px;
 }
+@media (min-width: 769px) {
+  .teaser-popup__text {
+    max-width: 203px;
+    margin: 0 auto 20px;
+  }
+}
 
 .teaser-popup__form {
   display: flex;
