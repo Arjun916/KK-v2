@@ -81,8 +81,8 @@ export default function Hero() {
           autoPlay loop muted playsInline
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
-          <img src="/hero-bg.jpg" alt="" aria-hidden="true"
-            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} />
+          {/* <img src="/hero-bg.jpg" alt="" aria-hidden="true"
+            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} /> */}
         </video>
 
         {/* MOBILE VIDEO — hidden on desktop */}
@@ -91,8 +91,8 @@ export default function Hero() {
           autoPlay loop muted playsInline
         >
           <source src="/hero-bg-mobile.mp4" type="video/mp4" />
-          <img src="/hero-bg-mobile.jpg" alt="" aria-hidden="true"
-            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} />
+          {/* <img src="/hero-bg-mobile.jpg" alt="" aria-hidden="true"
+            style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} /> */}
         </video>
 
         <div className="hero-overlay" aria-hidden="true" />
