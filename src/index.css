@@ -186,13 +186,13 @@ a    { text-decoration: none; color: inherit; }
 
   .teaser-popup__text {
     font-size: 11px;
-    margin-top: 16px;
+    margin-top: 6px;
     max-width: 169px;
     align-self: center;
   }
 
   .teaser-popup__form {
-    margin-top: 22px;
+    margin-top: 11px;
     flex-direction: row;
   }
 

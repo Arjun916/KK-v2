@@ -179,7 +179,7 @@ export default function CTASection() {
             right: auto;
             left: 50%;
             transform: translateX(-50%);
-            gap: 20px;
+            gap: 44px;
           }
         }
 
