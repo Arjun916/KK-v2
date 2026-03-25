@@ -6,19 +6,9 @@
  * Fixed: hover state → bg #FFFDF3, text #8D2222
  * Fixed: icons desktop right / mobile bottom-center
  */
-import { useState } from "react";
-import TeaserPopup from "./TeaserPopup";
 export default function CTASection() {
-  const [showPopup, setShowPopup] = useState(false);
-
   return (
     <>
-      {showPopup && (
-        <TeaserPopup
-          forceOpen={true}
-          onClose={() => setShowPopup(false)}
-        />
-      )}
       <style>{`
 
         /* ── CONTAINER ── */
@@ -213,12 +203,7 @@ export default function CTASection() {
           <p className="cta-p">Made with intention.</p>
           <p className="cta-p">Sign up for early access and updates.</p>
           <div className="cta-btn-wrap">
-            <button
-              className="cta-btn"
-              type="button"
-              aria-label="Join Kochi Kochu"
-              onClick={() => setShowPopup(true)}
-            >
+            <button className="cta-btn" type="button" aria-label="Join Kochi Kochu">
               Join
             </button>
           </div>

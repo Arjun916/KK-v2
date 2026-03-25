@@ -1,33 +1,20 @@
 import { useEffect, useState } from "react";
 
-export default function TeaserPopup({
-  storageKey = "teaserPopupSeen",
-  forceOpen = false,
-  onClose
-}) {
+export default function TeaserPopup({ storageKey = "teaserPopupSeen" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("");
 
-  /* 🔥 Auto open after 6s (only first time) */
   useEffect(() => {
-    if (forceOpen) {
-      setIsOpen(true);
-      return;
-    }
-
     if (!sessionStorage.getItem(storageKey)) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 6000); // ⏱️ 6 seconds
-
-      return () => clearTimeout(timer);
+      setIsOpen(true);
     }
-  }, [storageKey, forceOpen]);
+  }, [storageKey]);
 
-  /* lock scroll */
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) {
+      return undefined;
+    }
 
     const originalOverflow = document.body.style.overflow;
     const originalTouchAction = document.body.style.touchAction;
@@ -41,21 +28,21 @@ export default function TeaserPopup({
     };
   }, [isOpen]);
 
-  /* auto close after submit */
   useEffect(() => {
-    if (!submitted) return;
+    if (!submitted) {
+      return undefined;
+    }
 
-    const timeoutId = setTimeout(() => {
+    const timeoutId = window.setTimeout(() => {
       handleClose();
     }, 3000);
 
-    return () => clearTimeout(timeoutId);
+    return () => window.clearTimeout(timeoutId);
   }, [submitted]);
 
   const handleClose = () => {
     sessionStorage.setItem(storageKey, "true");
     setIsOpen(false);
-    if (onClose) onClose();
   };
 
   const handleSubmit = (e) => {
@@ -68,25 +55,30 @@ export default function TeaserPopup({
   return (
     <div
       className="teaser-popup-overlay"
+      role="presentation"
       onClick={handleClose}
     >
       <div
         className="teaser-popup"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="teaser-popup-heading"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           className="teaser-popup__close"
           onClick={handleClose}
           type="button"
+          aria-label="Close popup"
         >
           &times;
         </button>
 
-        <h2 className="teaser-popup__heading">
+        <h2 className="teaser-popup__heading" id="teaser-popup-heading">
           Join Kochi Kochu
         </h2>
 
-        <p className="teaser-popup__text">
+        <p className="teaser-popup__text" >
           Get early access to new pieces and updates
         </p>
 
@@ -100,12 +92,7 @@ export default function TeaserPopup({
             disabled={submitted}
             required
           />
-
-          <button
-            type="submit"
-            className="teaser-popup__btn"
-            disabled={submitted}
-          >
+          <button type="submit" className="teaser-popup__btn" disabled={submitted}>
             Sign Up
           </button>
         </form>

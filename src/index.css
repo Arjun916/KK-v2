@@ -118,6 +118,7 @@ a    { text-decoration: none; color: inherit; }
   color: #8D2222;
   font-size: 0.85rem;
   outline: none;
+  font-family: var(--font); /* ✅ FIX font */
 }
 
 .teaser-popup__input::placeholder {
@@ -138,7 +139,7 @@ a    { text-decoration: none; color: inherit; }
   display: flex;                /* ✅ center text */
   align-items: center;
   justify-content: center;
-
+  font-family: var(--font);   /* ✅ FIX font */
   transition: background 0.25s ease, color 0.25s ease;
 }
 
