@@ -3,6 +3,7 @@ export default function Hero() {
     <>
       <style>{`
         .hero {
+          position: relative;   /* ✅ IMPORTANT */
           width: 100%;
           min-height: 100vh;
           background: #000;
@@ -10,14 +11,16 @@ export default function Hero() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center; /* 🔥 centers everything vertically */
-          gap: clamp(20px, 5vh, 60px); /* spacing between sections */
+          justify-content: flex-start; /* 🔥 THIS FIXES THE GAP */
         }
 
         /* 🔝 Top */
         .hero-top {
-          display: flex;
-          justify-content: center;
+          position: absolute;
+          top: 60px;            /* adjust if needed */
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 10;
         }
 
         .hero-logo {
@@ -29,6 +32,7 @@ export default function Hero() {
           width: 100%;
           display: flex;
           justify-content: center;
+          margin-top: 70px;
         }
 
         .hero-video {
@@ -44,8 +48,16 @@ export default function Hero() {
 
         /* 🔽 Bottom */
         .hero-bottom {
+          position: absolute;
+          bottom: 45px;             /* ✅ fixed anchor */
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 10;
+
           display: flex;
           justify-content: center;
+          width: 100%;
+          pointer-events: none;     /* ✅ prevents overlap issues */
         }
 
         .hero-tagline {
@@ -58,12 +70,24 @@ export default function Hero() {
           text-align: center;
           margin: 0;
         }
-
-        /* 📱 Mobile */
         @media (max-width: 768px) {
           .hero-video-desktop { display: none; }
           .hero-video-mobile  { display: block; }
+
+          .hero-middle {
+            margin-top: 120px;
+          }
+          .hero-bottom {
+            bottom: 28px;   /* tighter for mobile */
+          }
         }
+
+        // /* 📱 Mobile */
+        // @media (max-width: 768px) {
+        //   .hero-video-desktop { display: none; }
+        //   .hero-video-mobile  { display: block; }
+        // }
+        
       `}</style>
 
       <section className="hero">

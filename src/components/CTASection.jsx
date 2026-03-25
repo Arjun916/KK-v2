@@ -51,9 +51,10 @@ export default function CTASection() {
            Vertically centered, left-aligned, left:90px */
         .cta-left {
           position: absolute;
-          top: 75%;
+          bottom: 70px;   /* ✅ NEW — anchors to bottom */
+          // top: 75%;
           left: 90px;
-          transform: translateY(-50%);
+          // transform: translateY(-50%);
           z-index: 10;
           display: flex;
           flex-direction: column;
