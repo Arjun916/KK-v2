@@ -122,7 +122,7 @@ export default function CTASection() {
           z-index: 10;
           display: flex;
           flex-direction: row;
-          gap: 18px;
+          gap: 39px;
           align-items: center;
         }
         .cta-icon {
