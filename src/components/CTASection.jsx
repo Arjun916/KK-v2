@@ -41,7 +41,7 @@ export default function CTASection() {
            Vertically centered, left-aligned, left:90px */
         .cta-left {
           position: absolute;
-          top: 50%;
+          top: 75%;
           left: 90px;
           transform: translateY(-50%);
           z-index: 10;
@@ -73,7 +73,7 @@ export default function CTASection() {
         /* Button wrapper — centers button under text */
         .cta-btn-wrap {
           display: flex;
-          justify-content: center;
+          // justify-content: center;
           width: 100%;
           margin-top: 12px;
         }
