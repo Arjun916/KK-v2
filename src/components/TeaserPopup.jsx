@@ -78,7 +78,7 @@ export default function TeaserPopup({ storageKey = "teaserPopupSeen" }) {
           Join Kochi Kochu
         </h2>
 
-        <p className="teaser-popup__text" style="max-width: 203px;">
+        <p className="teaser-popup__text" >
           Get early access to new pieces and updates.
         </p>
 
