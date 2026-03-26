@@ -151,21 +151,35 @@ a    { text-decoration: none; color: inherit; }
 }
 /* ✨ hide divider on hover (premium polish) */
 .teaser-popup__btn:hover {
-  border-left: 2px solid transparent;
+  
+  /* border-left: 2px solid transparent; */
 }
 /* active (press) */
 .teaser-popup__btn:active {
   background: #8D2222;
   color: #FFFDF3;
   transform: translateY(0);
-  border-left: 2px solid transparent;
+  /* border-left: 2px solid transparent; */
 }
 
 .teaser-popup__success {
+  position: absolute;
+  bottom: 35px;              /* 👈 controls vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+
   font-size: 11px;
-  margin-top: 12px;
   color: #8D2222;
   font-weight: 400;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  width: 100%;               /* 👈 keeps it responsive */
+  padding: 0 20px;           /* 👈 prevents edge touching on mobile */
+}
+.teaser-popup__success.show {
+  opacity: 1;
 }
 
 @media (max-width: 480px) {
@@ -216,6 +230,7 @@ a    { text-decoration: none; color: inherit; }
 }
 
   .teaser-popup__success {
+    bottom: 30px;
     margin-top: 26px;
   }
 }

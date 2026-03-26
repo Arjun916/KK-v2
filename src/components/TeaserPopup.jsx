@@ -110,11 +110,12 @@ export default function TeaserPopup({
           </button>
         </form>
 
-        {submitted && (
-          <p className="teaser-popup__success">
+        {/* {submitted && (
+          
+        )} */}
+        <p className={`teaser-popup__success ${submitted ? "show" : ""}`}>
             You're in. We'll be in touch.
-          </p>
-        )}
+        </p>
       </div>
     </div>
   );

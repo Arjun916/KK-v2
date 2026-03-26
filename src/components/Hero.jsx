@@ -41,16 +41,22 @@ export default function Hero() {
           height: auto;
           object-fit: cover;
         }
+        
 
         /* swap videos */
         .hero-video-desktop {
          display: block; 
-         width: clamp(600px, 60vw, 900px); /* ✅ controls width growth */
+         width: clamp(600px, 45vw, 720px); /* ✅ controls width growth */
          }
         .hero-video-mobile  {
          display: none; 
          
          }
+        @media (min-width: 1670px) {
+          .hero-video-desktop {
+            width: clamp(720px, 50vw, 900px);
+          }
+        }
 
         /* 🔽 Bottom */
         .hero-bottom {
@@ -133,7 +139,6 @@ export default function Hero() {
             Welcome to Kochi Kochu where belonging takes form
           </p>
         </div>
-
       </section>
     </>
   )
