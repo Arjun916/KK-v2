@@ -45,7 +45,7 @@ export default function Hero() {
         /* swap videos */
         .hero-video-desktop {
          display: block; 
-         width: clamp(300px, 100vw, 1000px); /* ✅ controls width growth */
+         width: clamp(600px, 60vw, 900px); /* ✅ controls width growth */
          }
         .hero-video-mobile  {
          display: none; 
@@ -79,7 +79,7 @@ export default function Hero() {
         @media (max-width: 768px) {
           .hero-video-desktop { display: none; }
           .hero-video-mobile  { display: block; 
-          width: clamp(280px, 87vw, 360px); /* ✅ controls width growth */
+          width: clamp(280px, 86vw, 360px); /* ✅ controls width growth */
           }
           
           .hero-middle {
