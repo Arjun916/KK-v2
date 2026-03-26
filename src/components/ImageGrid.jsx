@@ -52,10 +52,10 @@ export default function ImageGrid() {
           {/* IMAGE 1 */}
           <figure className="grid-figure">
             <picture>
-              <source media="(max-width: 768px)" srcSet="/image-grid-1-mobile.jpg" />
+              <source media="(max-width: 768px)" srcSet="/image-grid-1-mobile.webp" />
               <img
                 className="grid-img"
-                src="/image-grid-1.jpg"
+                src="/image-grid-1.webp"
                 alt="Kochi Kochu — editorial image one"
                 loading="eager"
               />
@@ -65,10 +65,10 @@ export default function ImageGrid() {
           {/* IMAGE 2 */}
           <figure className="grid-figure">
             <picture>
-              <source media="(max-width: 768px)" srcSet="/image-grid-2-mobile.jpg" />
+              <source media="(max-width: 768px)" srcSet="/image-grid-2-mobile.webp" />
               <img
                 className="grid-img"
-                src="/image-grid-2.jpg"
+                src="/image-grid-2.webp"
                 alt="Kochi Kochu — editorial image two"
                 loading="lazy"
               />

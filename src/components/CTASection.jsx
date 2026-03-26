@@ -202,8 +202,8 @@ export default function CTASection() {
 
         {/* Background image */}
         <picture>
-          <source media="(max-width: 768px)" srcSet="/cta-bg-mobile.jpg" />
-          <img className="cta-bg" src="/cta-bg.jpg" alt="" aria-hidden="true" loading="lazy" />
+          <source media="(max-width: 768px)" srcSet="/cta-bg-mobile.webp" />
+          <img className="cta-bg" src="/cta-bg.webp" alt="" aria-hidden="true" loading="lazy" />
         </picture>
 
         <div className="cta-gradient" aria-hidden="true" />
