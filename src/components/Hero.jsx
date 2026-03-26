@@ -65,6 +65,11 @@ export default function Hero() {
           width: 100%;
           pointer-events: none;     /* ✅ prevents overlap issues */
         }
+          @media (min-width: 769px) {
+            .hero-middle {
+              margin-top: 15vh;
+            }
+          }
 
         .hero-tagline {
           max-width: clamp(200px, 60vw, 260px);
@@ -79,14 +84,14 @@ export default function Hero() {
         @media (max-width: 768px) {
           .hero-video-desktop { display: none; }
           .hero-video-mobile  { display: block; 
-          width: clamp(280px, 86vw, 360px); /* ✅ controls width growth */
+          width: clamp(280px, 86vw, 370px); /* ✅ controls width growth */
           }
           
           .hero-middle {
-            margin-top: 95px;
+            margin-top: 98px;
           }
           .hero-bottom {
-            bottom: 28px;   /* tighter for mobile */
+            bottom: 35px;   /* tighter for mobile */
           }
         }
 
