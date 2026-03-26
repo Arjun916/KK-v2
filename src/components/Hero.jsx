@@ -83,7 +83,7 @@ export default function Hero() {
           }
           
           .hero-middle {
-            margin-top: 80px;
+            margin-top: 95px;
           }
           .hero-bottom {
             bottom: 28px;   /* tighter for mobile */
