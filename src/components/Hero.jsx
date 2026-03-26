@@ -12,6 +12,7 @@ export default function Hero() {
           flex-direction: column;
           align-items: center;
           justify-content: flex-start; /* 🔥 THIS FIXES THE GAP */
+          padding-bottom: 100px;
         }
 
         /* 🔝 Top */
@@ -36,15 +37,20 @@ export default function Hero() {
         }
 
         .hero-video {
-          width: 100%;
-          max-width: 900px;
+          
           height: auto;
           object-fit: cover;
         }
 
         /* swap videos */
-        .hero-video-desktop { display: block; }
-        .hero-video-mobile  { display: none; }
+        .hero-video-desktop {
+         display: block; 
+         width: clamp(300px, 100vw, 1000px); /* ✅ controls width growth */
+         }
+        .hero-video-mobile  {
+         display: none; 
+         
+         }
 
         /* 🔽 Bottom */
         .hero-bottom {
@@ -72,10 +78,12 @@ export default function Hero() {
         }
         @media (max-width: 768px) {
           .hero-video-desktop { display: none; }
-          .hero-video-mobile  { display: block; }
-
+          .hero-video-mobile  { display: block; 
+          width: clamp(280px, 85vw, 360px); /* ✅ controls width growth */
+          }
+          
           .hero-middle {
-            margin-top: 120px;
+            margin-top: 80px;
           }
           .hero-bottom {
             bottom: 28px;   /* tighter for mobile */
