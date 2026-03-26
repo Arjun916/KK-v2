@@ -79,7 +79,7 @@ export default function Hero() {
         @media (max-width: 768px) {
           .hero-video-desktop { display: none; }
           .hero-video-mobile  { display: block; 
-          width: clamp(280px, 85vw, 360px); /* ✅ controls width growth */
+          width: clamp(280px, 87vw, 360px); /* ✅ controls width growth */
           }
           
           .hero-middle {
